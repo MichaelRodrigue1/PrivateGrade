@@ -2,27 +2,26 @@ import { useState } from 'react';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 import { Header } from './Header';
-import { ScoreSubmission } from './ScoreSubmission';
-import { ScoreStatus } from './ScoreStatus';
-import { SchoolCheck } from './SchoolCheck';
 import '../styles/PrivateGradeApp.css';
+import { TeacherPanel } from './TeacherPanel';
+import { StudentPanel } from './StudentPanel';
+import { AdminPanel } from './AdminPanel';
+ 
 
 export function PrivateGradeApp() {
   const { isConnected } = useAccount();
-  const [activeTab, setActiveTab] = useState<'submit' | 'status' | 'school'>('submit');
+  const [activeTab, setActiveTab] = useState<'teacher' | 'student' | 'admin'>('teacher');
 
   return (
-    <div className="private-grade-app">
+    <div className="pg-app">
       <Header />
 
       <main className="main-content">
         {!isConnected ? (
           <div className="connect-wallet-container">
-            <h2 className="connect-wallet-title">
-              Connect Your Wallet
-            </h2>
+            <h2 className="connect-wallet-title">Connect Your Wallet</h2>
             <p className="connect-wallet-description">
-              Please connect your wallet to access the Private Grade System
+              Please connect your wallet to use PrivateGrade
             </p>
             <ConnectButton />
           </div>
@@ -31,29 +30,31 @@ export function PrivateGradeApp() {
             <div className="tab-navigation">
               <nav className="tab-nav">
                 <button
-                  onClick={() => setActiveTab('submit')}
-                  className={`tab-button ${activeTab === 'submit' ? 'active' : 'inactive'}`}
+                  onClick={() => setActiveTab('teacher')}
+                  className={`tab-button ${activeTab === 'teacher' ? 'active' : 'inactive'}`}
                 >
-                  Submit Score
+                  Teacher
                 </button>
                 <button
-                  onClick={() => setActiveTab('status')}
-                  className={`tab-button ${activeTab === 'status' ? 'active' : 'inactive'}`}
+                  onClick={() => setActiveTab('student')}
+                  className={`tab-button ${activeTab === 'student' ? 'active' : 'inactive'}`}
                 >
-                  My Score
+                  Student
                 </button>
                 <button
-                  onClick={() => setActiveTab('school')}
-                  className={`tab-button ${activeTab === 'school' ? 'active' : 'inactive'}`}
+                  onClick={() => setActiveTab('admin')}
+                  className={`tab-button ${activeTab === 'admin' ? 'active' : 'inactive'}`}
                 >
-                  School Check
+                  Admin
                 </button>
+                
               </nav>
             </div>
 
-            {activeTab === 'submit' && <ScoreSubmission />}
-            {activeTab === 'status' && <ScoreStatus />}
-            {activeTab === 'school' && <SchoolCheck />}
+            {activeTab === 'teacher' && <TeacherPanel />}
+            {activeTab === 'student' && <StudentPanel />}
+            
+            {activeTab === 'admin' && <AdminPanel />}
           </div>
         )}
       </main>
