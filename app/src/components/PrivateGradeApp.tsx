@@ -6,57 +6,45 @@ import '../styles/PrivateGradeApp.css';
 import { TeacherPanel } from './TeacherPanel';
 import { StudentPanel } from './StudentPanel';
 import { AdminPanel } from './AdminPanel';
- 
+
 
 export function PrivateGradeApp() {
-  const { isConnected } = useAccount();
   const [activeTab, setActiveTab] = useState<'teacher' | 'student' | 'admin'>('teacher');
 
   return (
     <div className="pg-app">
       <Header />
-
       <main className="main-content">
-        {!isConnected ? (
-          <div className="connect-wallet-container">
-            <h2 className="connect-wallet-title">Connect Your Wallet</h2>
-            <p className="connect-wallet-description">
-              Please connect your wallet to use PrivateGrade
-            </p>
-            <ConnectButton />
-          </div>
-        ) : (
-          <div>
-            <div className="tab-navigation">
-              <nav className="tab-nav">
-                <button
-                  onClick={() => setActiveTab('teacher')}
-                  className={`tab-button ${activeTab === 'teacher' ? 'active' : 'inactive'}`}
-                >
-                  Teacher
-                </button>
-                <button
-                  onClick={() => setActiveTab('student')}
-                  className={`tab-button ${activeTab === 'student' ? 'active' : 'inactive'}`}
-                >
-                  Student
-                </button>
-                <button
-                  onClick={() => setActiveTab('admin')}
-                  className={`tab-button ${activeTab === 'admin' ? 'active' : 'inactive'}`}
-                >
-                  Admin
-                </button>
-                
-              </nav>
-            </div>
+        <div>
+          <div className="tab-navigation">
+            <nav className="tab-nav">
+              <button
+                onClick={() => setActiveTab('teacher')}
+                className={`tab-button ${activeTab === 'teacher' ? 'active' : 'inactive'}`}
+              >
+                Teacher
+              </button>
+              <button
+                onClick={() => setActiveTab('student')}
+                className={`tab-button ${activeTab === 'student' ? 'active' : 'inactive'}`}
+              >
+                Student
+              </button>
+              <button
+                onClick={() => setActiveTab('admin')}
+                className={`tab-button ${activeTab === 'admin' ? 'active' : 'inactive'}`}
+              >
+                Admin
+              </button>
 
-            {activeTab === 'teacher' && <TeacherPanel />}
-            {activeTab === 'student' && <StudentPanel />}
-            
-            {activeTab === 'admin' && <AdminPanel />}
+            </nav>
           </div>
-        )}
+
+          {activeTab === 'teacher' && <TeacherPanel />}
+          {activeTab === 'student' && <StudentPanel />}
+
+          {activeTab === 'admin' && <AdminPanel />}
+        </div>
       </main>
     </div>
   );
