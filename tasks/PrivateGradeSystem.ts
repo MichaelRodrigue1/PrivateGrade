@@ -44,7 +44,7 @@ task("submit-score")
     const contract = await ethers.getContractAt("PrivateGradeSystem", taskArguments.contract);
     const teacher = signers[taskArguments.teacherIndex];
     const teacherAddress = await teacher.getAddress();
-    
+    await fhevm.initializeCLIApi()
     console.log("Submitting score for student:", taskArguments.student);
     console.log("Score:", taskArguments.score);
     console.log("Teacher:", teacherAddress);
@@ -73,7 +73,8 @@ task("get-student-score")
     const signers = await ethers.getSigners();
     const contract = await ethers.getContractAt("PrivateGradeSystem", taskArguments.contract);
     const student = signers[taskArguments.studentIndex];
-    
+    await fhevm.initializeCLIApi();
+
     console.log("Getting score for student:", taskArguments.student);
     console.log("Using signer:", await student.getAddress());
     
