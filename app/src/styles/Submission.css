@@ -1,0 +1,15 @@
+.pg-submission-container { max-width: 42rem; margin: 0 auto; }
+.pg-submission-card { background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06); border-radius: .5rem; padding: 1.5rem; }
+.pg-submission-title { font-size: 1.5rem; font-weight: 700; color: #111827; margin-bottom: 1.5rem; }
+.form-group { display: flex; flex-direction: column; }
+.form-label { display: block; font-size: .875rem; font-weight: 500; color: #374151; margin-bottom: .5rem; }
+.text-input { display: block; width: 100%; font-size: .875rem; color: #111827; border: 1px solid #e5e7eb; border-radius: .375rem; padding: .5rem .75rem; }
+.warning-box { padding: .75rem; background: #fff7ed; border: 1px solid #fed7aa; border-radius: .375rem; }
+.warning-text { color: #9a3412; font-size: .875rem; }
+.success-box { padding: .75rem; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: .375rem; }
+.success-title { color: #065f46; font-weight: 600; margin-bottom: .25rem; }
+.success-text { color: #065f46; font-size: .875rem; }
+.hash-code { font-family: monospace; background: #f3f4f6; padding: .125rem .25rem; border-radius: .25rem; }
+.submit-section { margin-top: 1rem; }
+.submit-button { background: #2563eb; color: #fff; padding: .5rem 1rem; border-radius: .375rem; border: 0; font-size: .875rem; cursor: pointer; transition: background-color .2s; }
+.submit-button:disabled { background: #9ca3af; cursor: not-allowed; }

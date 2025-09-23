@@ -1,0 +1,19 @@
+.pg-status-container { max-width: 56rem; margin: 0 auto; }
+.status-card { background: #fff; border: 1px solid #e5e7eb; border-radius: .5rem; padding: 1rem; }
+.status-title { font-size: 1.25rem; font-weight: 700; color: #111827; }
+.status-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: .75rem; }
+.status-item { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: .375rem; padding: .75rem; }
+.status-label { font-size: .75rem; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; }
+.status-value { font-size: .875rem; color: #111827; word-break: break-all; }
+.decrypt-section { margin-top: 1.5rem; padding: 1rem; background: #eff6ff; border-radius: .375rem; }
+.decrypt-title { font-size: 1rem; font-weight: 600; color: #1e40af; margin-bottom: .5rem; }
+.decrypt-description { font-size: .875rem; color: #1e40af; margin-bottom: 1rem; }
+.decrypt-button { background: #2563eb; color: #fff; padding: .5rem 1rem; border-radius: .375rem; border: 0; font-size: .875rem; cursor: pointer; transition: background-color .2s; }
+.decrypt-button:disabled { background: #9ca3af; cursor: not-allowed; }
+.decrypted-section { margin-top: 1rem; padding: 1rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: .375rem; }
+.decrypted-grid { display: grid; grid-template-columns: repeat(1,minmax(0,1fr)); gap: .75rem; }
+@media (min-width: 768px) { .decrypted-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+.decrypted-item { padding: .75rem; background: #fff; border-radius: .375rem; border: 1px solid #bbf7d0; }
+.decrypted-label { font-size: .75rem; font-weight: 500; color: #166534; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .25rem; }
+.decrypted-value { font-size: .875rem; color: #111827; }
+.code-value { font-family: monospace; background: #f3f4f6; padding: .25rem; border-radius: .25rem; }
