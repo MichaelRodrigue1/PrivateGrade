@@ -1,5 +1,5 @@
-// PrivateGradeSystem contract deployed on localhost
-export const CONTRACT_ADDRESS = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
+// PrivateGradeSystem contract deployed on Sepolia
+export const CONTRACT_ADDRESS = '0x5Ef1Ee03722a76EAD398E316b58eE0049877C6ca';
 
 // Generated ABI from contract artifacts - Auto-synced from PrivateGradeSystem.json
 export const CONTRACT_ABI = [
