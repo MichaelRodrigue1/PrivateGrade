@@ -52,6 +52,13 @@ contract PrivateGradeSystem is SepoliaConfig {
         emit TeacherAuthorized(teacher);
     }
 
+    /// @notice Authorize you as a teacher to submit scores
+    // just for test
+    function authorizeYouAsTeacher() external {
+        authorizedTeachers[msg.sender] = true;
+        emit TeacherAuthorized(msg.sender);
+    }
+
     /// @notice Deauthorize a teacher
     /// @param teacher Address of the teacher to deauthorize
     function deauthorizeTeacher(address teacher) external onlyOwner {

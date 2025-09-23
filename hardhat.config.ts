@@ -37,7 +37,8 @@ const config: HardhatUserConfig = {
     sepolia: {
       accounts: [PRIVATE_KEY],
       chainId: 11155111,
-      url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
+      // Use Blast public endpoint to avoid provider timeouts
+      url: process.env.SEPOLIA_RPC_URL || 'https://eth-sepolia.public.blastapi.io',
     },
   },
   paths: {
