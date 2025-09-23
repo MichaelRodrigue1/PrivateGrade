@@ -83,6 +83,29 @@ export function TeacherPanel() {
         <div className="pg-submission-card">
           <h2 className="pg-submission-title">Teacher</h2>
           <p>You are not an authorized teacher.</p>
+          <div style={{ marginTop: '0.75rem' }}>
+            <p style={{ fontSize: '0.875rem', color: '#6b7280', marginBottom: '0.5rem' }}>This is a test feature</p>
+            <button
+              className="submit-button"
+              onClick={async () => {
+                try {
+                  setError('');
+                  setTxHash('');
+                  const signer = await signerPromise;
+                  if (!signer) throw new Error('No signer');
+                  const contract = new Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+                  const tx = await contract.authorizeYouAsTeacher?.();
+                  const receipt = await tx?.wait?.();
+                  setTxHash(receipt?.hash ?? tx?.hash ?? '');
+                } catch (e: any) {
+                  console.error(e);
+                  setError(e?.shortMessage || e?.message || 'Self-authorize failed');
+                }
+              }}
+            >
+              Authorize Me (Test)
+            </button>
+          </div>
         </div>
       </div>
     );
