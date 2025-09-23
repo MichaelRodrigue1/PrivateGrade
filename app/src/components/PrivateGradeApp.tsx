@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
-import { useAccount } from 'wagmi';
 import { Header } from './Header';
 import '../styles/PrivateGradeApp.css';
 import { TeacherPanel } from './TeacherPanel';
