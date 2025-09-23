@@ -1,7 +1,7 @@
 // PrivateGradeSystem contract deployed on Sepolia
-export const CONTRACT_ADDRESS = '0x5Ef1Ee03722a76EAD398E316b58eE0049877C6ca';
+export const CONTRACT_ADDRESS = '0xF3bB757077D5A923Da9cFde00fa4Deacf9e66171';
 
-// Generated ABI from contract artifacts - Auto-synced from PrivateGradeSystem.json
+// ABI copied from deployments/sepolia/PrivateGradeSystem.json
 export const CONTRACT_ABI = [
   {
     "inputs": [],
@@ -107,30 +107,6 @@ export const CONTRACT_ABI = [
   {
     "inputs": [
       {
-        "internalType": "address[]",
-        "name": "students",
-        "type": "address[]"
-      },
-      {
-        "internalType": "uint32",
-        "name": "threshold",
-        "type": "uint32"
-      }
-    ],
-    "name": "batchCheckAdmissionThreshold",
-    "outputs": [
-      {
-        "internalType": "ebool[]",
-        "name": "",
-        "type": "bytes32[]"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "teacher",
         "type": "address"
@@ -161,58 +137,15 @@ export const CONTRACT_ABI = [
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getTotalStudentsWithScores",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "pure",
-    "type": "function"
-  },
-  {
     "inputs": [
       {
         "internalType": "address",
-        "name": "",
+        "name": "user",
         "type": "address"
       }
     ],
-    "name": "hasScore",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "student",
-        "type": "address"
-      },
-      {
-        "internalType": "uint32",
-        "name": "threshold",
-        "type": "uint32"
-      }
-    ],
-    "name": "meetsAdmissionThreshold",
-    "outputs": [
-      {
-        "internalType": "ebool",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
+    "name": "grantAccess",
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -230,22 +163,16 @@ export const CONTRACT_ABI = [
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "student",
-        "type": "address"
-      }
-    ],
-    "name": "studentHasScore",
+    "inputs": [],
+    "name": "protocolId",
     "outputs": [
       {
-        "internalType": "bool",
+        "internalType": "uint256",
         "name": "",
-        "type": "bool"
+        "type": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "pure",
     "type": "function"
   },
   {

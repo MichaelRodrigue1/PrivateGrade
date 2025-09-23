@@ -1,9 +1,11 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { sepolia } from 'wagmi/chains';
 
+const projectId = (import.meta as any).env?.VITE_WALLETCONNECT_PROJECT_ID || 'demo';
+
 export const config = getDefaultConfig({
-  appName: 'PrivateGrade System',
-  projectId: 'YOUR_PROJECT_ID', // Get from https://cloud.walletconnect.com
+  appName: 'PrivateGrade',
+  projectId,
   chains: [sepolia],
   ssr: false,
 });

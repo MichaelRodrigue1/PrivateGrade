@@ -8,7 +8,7 @@ export function Header() {
         <div className="header-content">
           <div className="header-left">
             <h1 className="header-title">
-              PrivateGrade System
+              PrivateGrade
             </h1>
             <span className="header-badge">
               Confidential
